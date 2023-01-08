@@ -37,7 +37,7 @@ public class ImagePanel extends JPanel {
 
     static int ilesmieci =4;
 
-    static ArrayList<ImageIcon> smieci = new ArrayList();     //lista wygenerowanych kwadratow
+    static ArrayList<ImageIcon> smieci = new ArrayList(); 
     static ArrayList<Point> punkty = new ArrayList();
     static ArrayList<Integer> ktortsmietnik = new ArrayList();
 
@@ -137,8 +137,6 @@ public class ImagePanel extends JPanel {
                 }
             }
         }
-
-        //Przenoszenie ostatniego kwadratu z listy
         @Override
         public void mouseDragged(MouseEvent e) {
             if (czyWcisniety) {
@@ -154,7 +152,7 @@ public class ImagePanel extends JPanel {
                CzyKwadratwSmietniku(e.getX(), e.getY());
                 czyWcisniety = false;
                 if(ilesmieci==0){
-                    System.out.println("KURWAAAAAA");
+                    System.out.println("Wygrana");
 
                 }
             }
