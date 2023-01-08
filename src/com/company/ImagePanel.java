@@ -151,7 +151,7 @@ public class ImagePanel extends JPanel {
         }
         public void mouseReleased(MouseEvent e){
             if(czyWcisniety){
-                CzyKwadratwKontenerze(e.getX(), e.getY());
+               CzyKwadratwSmietniku(e.getX(), e.getY());
                 czyWcisniety = false;
                 if(ilesmieci==0){
                     System.out.println("KURWAAAAAA");
@@ -159,30 +159,26 @@ public class ImagePanel extends JPanel {
                 }
             }
         }
-        public void CzyKwadratwKontenerze(int ex, int ey){
-            if (ey > 645){
-                int ktoryKontener;
+        public void CzyKwadratwSmietniku(int ex, int ey){
+            if (ey > 10){
+                int ktorySmietnik;
 
-                if (ex >= 10 && ex <= 310){
-                    ktoryKontener = 1;
-                    CzyKwadratwKontenerzePom(ktoryKontener);
+                if (ex >= 100 && ex <= 1000){
+                    ktorySmietnik = 1;
+                    CzyKwadratwKontenerzePom(ktorySmietnik);
                 }
-                else if (ex >= 320 && ex <= 620){
-                    ktoryKontener = 2;
-                    CzyKwadratwKontenerzePom(ktoryKontener);
+                else if (ex >= 200 && ex <= 1000){
+                    ktorySmietnik = 2;
+                    CzyKwadratwKontenerzePom(ktorySmietnik);
                 }
-                else if (ex >= 630 && ex <= 930){
-                    ktoryKontener = 3;
-                    CzyKwadratwKontenerzePom(ktoryKontener);
-                }
-                else if (ex >= 940 && ex <= 1240){
-                    ktoryKontener = 4;
-                    CzyKwadratwKontenerzePom(ktoryKontener);
+                else if (ex >= 300 && ex <= 1000){
+                    ktorySmietnik = 3;
+                    CzyKwadratwSmietniku2(ktorySmietnik);
                 }
             }
         }
-        void CzyKwadratwKontenerzePom(int ktoryKontener){
-            if (ktortsmietnik.get(ilesmieci - 1)==(ktoryKontener)) {
+        void CzyKwadratwSmietniku2(int ktorySmietnik){
+            if (ktortsmietnik.get(ilesmieci - 1)==(ktorySmietnik)) {
                 smieci.remove(ilesmieci - 1);
                 punkty.remove(ilesmieci - 1);
                 ktortsmietnik.remove(ilesmieci - 1);
