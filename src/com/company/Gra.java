@@ -4,32 +4,32 @@ import javax.swing.*;
 
 public class Gra extends JFrame {
 
-    private JLabel background;
-    JLabel pole;
+    ImagePanel image_panel= new ImagePanel();
+    Skalowanie_wszystkiego skalowanie_wszystkiego = new Skalowanie_wszystkiego();
 
     Gra(){
-        setSize(1280, 1024);
-        setTitle("Dustman_the_game");
+        final int width = 1280;
+        final int height = 1024;
+
+        setSize(width, height);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setFocusable(true);
+
         setLayout(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       // ImageIcon IStart=new ImageIcon("C:/Users/pipi2/Desktop/Projekt_JPWP/Start2.png");
 
+        setTitle("Dustman_the_game");
 
+        JPanel panel = new JPanel();
+        panel.setSize(1280, 1024);
 
+        skalowanie_wszystkiego.Skalowanie();
+        image_panel.Nadaj_kordynaty();
 
+        add(panel);
 
-        /*ImageIcon ITlo=new ImageIcon("C:/Users/pipi2/Desktop/Projekt_JPWP/Tlo.png");
-        background = new JLabel("",ITlo,JLabel.CENTER);
-        background.setBounds(0,0,1280, 1024);
-        add(background);*/
+        image_panel.Panel();
 
-
-        ImagePanel image_panel= new ImagePanel();
-        image_panel.setBounds(0,0,1280, 1024);
-        this.add(image_panel);
-
-       // new21313 image_panel2= new new21313();
-        //this.add(image_panel2);
+        panel.add(image_panel);
 
         setVisible(true);
     }
