@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.company","l":"ImagePanel.DraggandClick"},{"p":"com.company","l":"Gra"},{"p":"com.company","l":"ImagePanel"},{"p":"com.company","l":"Main"},{"p":"com.company","l":"Menu"},{"p":"com.company","l":"Skalowanie_wszystkiego"},{"p":"com.company","l":"Ustawienia"}];updateSearchResults();

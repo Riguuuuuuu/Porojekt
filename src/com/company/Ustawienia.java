@@ -4,22 +4,37 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Okno ustawien gry edukacyjnej.
+ * @author Przemyslaw Winiarski
+ */
 public class Ustawienia extends JFrame implements ActionListener {
 
+    /** Zdeklarowanie Radio Buttons do wyboru poziomu trudnosci. */
+    final JRadioButton Latwy, Normalny, Trudny;
 
-    ImageIcon ITlo = new ImageIcon("C:/Users/pipi2/Desktop/Projekt_JPWP/Tlo.png");
+    /** Zdeklarowanie przycisku do powrotu do glownego menu. */
+    final JButton Powrot;
 
-    JLabel background;
+    /**
+     * Deklaracja wstepnych parametrow w razie nie wybrania przez uzytkowanika
+     *  wlasnorecznie poziomu trudnosci.
+     */
+    static int poziomtrudnosci = 1,ilesmietnikoww=3,ilesmiecii=6;
 
-    JRadioButton Latwy;
-    JRadioButton Normalny;
-    JRadioButton Trudny;
-
-    private JButton Powrot;
-
-    static int poziomtrudnosci = 1;
-
+    /**
+     * Głowny konstruktor klasy - stworzenie Grupy RadioButtonow, w celu wyboru
+     * poziomu trudnosci w grze.
+     */
     Ustawienia() {
+        ImageIcon ITlo = new ImageIcon("Grafika/Tlo.png");
+        ImageIcon BPowrot = new ImageIcon("Grafika/Powrot.png");
+        ImageIcon RLatwy = new ImageIcon("Grafika/Latwy.png");
+        ImageIcon RNormalny = new ImageIcon("Grafika/Normalny.png");
+        ImageIcon RTrudny = new ImageIcon("Grafika/Trudny.png");
+
+        JLabel background;
+
         final int width = 1280;
         final int height = 1024;
 
@@ -28,16 +43,16 @@ public class Ustawienia extends JFrame implements ActionListener {
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Latwy = new JRadioButton("Latwy", true);
-        Latwy.setBounds(100, 100, 100, 20);
+        Latwy = new JRadioButton(RLatwy, true);
+        Latwy.setBounds(100, 100, 400, 200);
         Latwy.setOpaque(false);
 
-        Normalny = new JRadioButton("Normalny", false);
-        Normalny.setBounds(300, 100, 100, 20);
+        Normalny = new JRadioButton(RNormalny, false);
+        Normalny.setBounds(100, 300, 450, 200);
         Normalny.setOpaque(false);
 
-        Trudny = new JRadioButton("Trudny", false);
-        Trudny.setBounds(500, 100, 100, 20);
+        Trudny = new JRadioButton(RTrudny, false);
+        Trudny.setBounds(100, 500, 400, 200);
         Trudny.setOpaque(false);
 
         ButtonGroup PoziomyTrudnosci = new ButtonGroup();
@@ -54,8 +69,8 @@ public class Ustawienia extends JFrame implements ActionListener {
         add(Normalny);
         add(Trudny);
 
-        Powrot = new JButton("Ustawienia");
-        Powrot.setBounds(440, 370, 400, 200);
+        Powrot = new JButton("",BPowrot);
+        Powrot.setBounds(800, 800, 400, 200);
         Powrot.setBorderPainted(false);
         Powrot.setContentAreaFilled(false);
         Powrot.setFocusPainted(false);
@@ -70,16 +85,25 @@ public class Ustawienia extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    /**
+     * Obsluga zdarzen - wyboru poziomu trudnosci.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == Latwy) {
             poziomtrudnosci = 1;
+            ilesmietnikoww=3;
+            ilesmiecii=6;
         } else if (e.getSource() == Normalny) {
             poziomtrudnosci = 2;
+            ilesmietnikoww=4;
+            ilesmiecii=8;
         } else if (e.getSource() == Trudny) {
             poziomtrudnosci = 3;
+            ilesmietnikoww=5;
+            ilesmiecii=10;
         } else if (e.getSource() == Powrot) {
-            Main dustman = new Main();
+            Menu dustman = new Menu();
             dustman.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             dustman.setVisible(true);
             setVisible(false);

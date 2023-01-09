@@ -2,12 +2,20 @@ package com.company;
 
 import javax.swing.*;
 
+/**
+ * Glowny obszar graficzny gry
+ * @author Przemyslaw Winiarski
+ */
 public class Gra extends JFrame {
 
-    ImagePanel image_panel= new ImagePanel();
-    Skalowanie_wszystkiego skalowanie_wszystkiego = new Skalowanie_wszystkiego();
-
+    /**
+     * Konstruktor klasy pola graficznego gry.
+     * Uruchomienie pomocniczych metod potrzebnych do poprawnego dzialania gry.
+     */
     Gra(){
+        ImagePanel image_panel= new ImagePanel();
+        Skalowanie_wszystkiego skalowanie_wszystkiego = new Skalowanie_wszystkiego();
+
         final int width = 1280;
         final int height = 1024;
 
